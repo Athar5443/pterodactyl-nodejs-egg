@@ -1,0 +1,86 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": "https://github.com/Athar5443/pterodactyl-nodejs-egg"
+    },
+    "exported_at": "2025-10-27T00:00:00+00:00",
+    "name": "AtharsTech Node.js Egg",
+    "author": "AtharsTech",
+    "description": "Pterodactyl Node.js Egg with multiple variants (base, graphics, playwright, full). Supports auto-install, auto-update, and custom startup command.",
+    "features": "plawright.ffmpeg,imagemagick,and more",
+    "docker_images": {
+        "Node 18 (Base)": "athars5443/pterodactyl-egg:node18-base",
+        "Node 18 (Graphics)": "athars5443/pterodactyl-egg:node18-graphics",
+        "Node 18 (Playwright)": "athars5443/pterodactyl-egg:node18-playwright",
+        "Node 18 (Playwright Full)": "athars5443/pterodactyl-egg:node18-playwright-full",
+        "Node 18 (Full Entrypoint)": "athars5443/pterodactyl-egg:node18-full",
+        "Node 20 (Base)": "athars5443/pterodactyl-egg:node20-base",
+        "Node 20 (Graphics)": "athars5443/pterodactyl-egg:node20-graphics",
+        "Node 20 (Playwright)": "athars5443/pterodactyl-egg:node20-playwright",
+        "Node 20 (Playwright Full)": "athars5443/pterodactyl-egg:node20-playwright-full",
+        "Node 20 (Full Entrypoint)": "athars5443/pterodactyl-egg:node20-full",
+        "Node 22 (Base)": "athars5443/pterodactyl-egg:node22-base",
+        "Node 22 (Graphics)": "athars5443/pterodactyl-egg:node22-graphics",
+        "Node 22 (Playwright)": "athars5443/pterodactyl-egg:node22-playwright",
+        "Node 22 (Playwright Full)": "athars5443/pterodactyl-egg:node22-playwright-full",
+        "Node 22 (Full Entrypoint)": "athars5443/pterodactyl-egg:node22-full",
+        "Node 25 (Base)": "athars5443/pterodactyl-egg:node25-base",
+        "Node 25 (Graphics)": "athars5443/pterodactyl-egg:node25-graphics",
+        "Node 25 (Playwright)": "athars5443/pterodactyl-egg:node25-playwright",
+        "Node 25 (Playwright Full)": "athars5443/pterodactyl-egg:node25-playwright-full",
+        "Node 25 (Full Entrypoint)": "athars5443/pterodactyl-egg:node25-full",
+        "Node Latest (Base)": "athars5443/pterodactyl-egg:nodelatest-base",
+        "Node Latest (Graphics)": "athars5443/pterodactyl-egg:nodelatest-graphics",
+        "Node Latest (Playwright)": "athars5443/pterodactyl-egg:nodelatest-playwright",
+        "Node Latest (Playwright Full)": "athars5443/pterodactyl-egg:nodelatest-playwright-full",
+        "Node Latest (Full Entrypoint)": "athars5443/pterodactyl-egg:nodelatest-full"
+    },
+    "file_denylist": [],
+    "startup": "/entrypoint.sh",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"Server is listening\"\r\n}",
+        "logs": "{}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!/bin/bash\r\necho 'Installation complete. Place your Node.js project files in /mnt/server.'",
+            "container": "alpine:latest",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Startup Command",
+            "description": "The command to start your application (example: node index.js)",
+            "env_variable": "STARTUP_CMD",
+            "default_value": "node index.js",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:200",
+            "field_type": "text"
+        },
+        {
+            "name": "Auto Install Dependencies",
+            "description": "Automatically install missing dependencies (npm install) on container start.",
+            "env_variable": "AUTO_INSTALL",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean",
+            "field_type": "text"
+        },
+        {
+            "name": "Auto Update Dependencies",
+            "description": "Automatically run npm update before starting the app.",
+            "env_variable": "AUTO_UPDATE",
+            "default_value": "false",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean",
+            "field_type": "text"
+        }
+    ]
+}
