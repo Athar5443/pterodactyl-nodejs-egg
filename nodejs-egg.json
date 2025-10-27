@@ -2,13 +2,13 @@
     "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
     "meta": {
         "version": "PTDL_v2",
-        "update_url": "https://github.com/Athar5443/pterodactyl-nodejs-egg"
+        "update_url": null
     },
     "exported_at": "2025-10-27T00:00:00+00:00",
-    "name": "AtharsTech Node.js Egg",
+    "name": "AtharsTech Node.js (Docker Flexible)",
     "author": "AtharsTech",
-    "description": "Pterodactyl Node.js Egg with multiple variants (base, graphics, playwright, full). Supports auto-install, auto-update, and custom startup command.",
-    "features": "plawright.ffmpeg,imagemagick,and more",
+    "description": "Flexible Pterodactyl Node.js Egg with multiple Docker image variants (base, graphics, playwright, full). Supports auto-install, auto-update, and custom startup command.",
+    "features": null,
     "docker_images": {
         "Node 18 (Base)": "athars5443/pterodactyl-egg:node18-base",
         "Node 18 (Graphics)": "athars5443/pterodactyl-egg:node18-graphics",
@@ -37,18 +37,18 @@
         "Node Latest (Full Entrypoint)": "athars5443/pterodactyl-egg:nodelatest-full"
     },
     "file_denylist": [],
-    "startup": "/entrypoint.sh",
+    "startup": "{{STARTUP_CMD}}",
     "config": {
         "files": "{}",
-        "startup": "{\r\n    \"done\": \"Server is listening\"\r\n}",
+        "startup": "{\r\n    \"done\": [\r\n        \"Server is listening\",\r\n        \"Application started\"\r\n    ]\r\n}",
         "logs": "{}",
         "stop": "^^C"
     },
     "scripts": {
         "installation": {
-            "script": "#!/bin/bash\r\necho 'Installation complete. Place your Node.js project files in /mnt/server.'",
-            "container": "alpine:latest",
-            "entrypoint": "ash"
+            "script": "#!/bin/bash\r\n# AtharsTech Node.js Docker Flexible Installer\r\nset -e\r\n\r\ncd /mnt/server\r\n\r\necho \"========================================\"\r\necho \"AtharsTech Node.js Installation\"\r\necho \"========================================\"\r\necho \"Installation complete!\"\r\necho \"Docker image already contains all dependencies.\"\r\necho \"Place your Node.js project files here.\"\r\necho \"========================================\"\r\n\r\nexit 0",
+            "container": "node:18-bullseye-slim",
+            "entrypoint": "bash"
         }
     },
     "variables": [
