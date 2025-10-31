@@ -4,39 +4,35 @@
 
 # **AtharsTech Node.js Pterodactyl Egg**
 
-**Sebuah Egg Pterodactyl yang dirancang superior untuk menjalankan segala jenis aplikasi Node.js dengan otomatisasi dan fleksibilitas penuh.**
+**Egg Pterodactyl paling komprehensif untuk developer Node.js yang menuntut stabilitas, kecepatan, dan kustomisasi tanpa kompromi.**
 
 </div>
 
 <div align="center">
 
 [![GitHub Stars](https://img.shields.io/github/stars/Athar5443/pterodactyl-nodejs-egg?style=for-the-badge&logo=github&color=FFC107&logoColor=white)](https://github.com/Athar5443/pterodactyl-nodejs-egg/stargazers)
-[![Node Version](https://img.shields.io/badge/Node.js-18,_20,_22,_25-339933?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
-[![Docker Support](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)](https://hub.docker.com/r/athars5443/pterodactyl-egg)
+[![Repo](https://img.shields.io/badge/Docker-Kunjungi%20Repo-2496ED?style=for-the-badge&logo=docker)](https://hub.docker.com/r/athars5443/pterodactyl-egg)
+[![Node Version](https://img.shields.io/badge/Node.js-18,20,22,25-339933?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
 
 </div>
 
 ---
 
-## 🤔 **Mengapa Memilih Egg Ini?**
+## 🚀 **Fitur Utama**
 
-Egg ini bukan sekadar egg Node.js biasa. Dibuat untuk developer yang menginginkan **efisiensi** dan **kontrol**. Lupakan proses setup manual yang membuang waktu. Dengan *AtharsTech Node.js Egg*, server Anda akan siap berjalan dalam hitungan menit, lengkap dengan otomatisasi cerdas.
-
----
-
-## ✨ **Fitur Unggulan**
+Hemat waktu setup dan biarkan server Anda bekerja secara otomatis.
 
 | Ikon | Fitur                      | Deskripsi Singkat                                                                                                |
 | :--: | :------------------------- | :--------------------------------------------------------------------------------------------------------------- |
-| `📦` | **Dukungan Multi-Versi** | Jalankan aplikasi pada Node.js versi `18`, `20`, `22`, `25`, atau `latest`.                                     |
-| `🖼️` | **Varian Image Lengkap** | Pilih image `base`, `graphics` (dengan canvas), atau `playwright` (untuk automasi browser) sesuai kebutuhan proyek. |
 | `🔄` | **Otomatisasi Cerdas** | `git pull`, `npm install`, dan `npm update` otomatis saat server dinyalakan.                                       |
+| `📦` | **Dukungan Multi-Versi** | Penuh dukungan untuk Node.js versi `18`, `20`, `22`, `25`, dan `latest`.                                        |
+| `🖼️` | **Varian Image Lengkap** | Dari `base` minimalis hingga `full` dengan Playwright dan Java, pilih yang Anda butuhkan.                        |
 | `⚙️` | **Konfigurasi Fleksibel** | Kustomisasi perintah startup, repositori Git, branch, dan lainnya dengan mudah melalui variabel.                |
-| `🚀` | **Deployment Instan** | Clone repositori dan install dependensi secara otomatis pada instalasi pertama.                                  |
+| `⚡` | **Instalasi Cepat** | Clone repositori dan install dependensi secara otomatis pada instalasi pertama.                                  |
 
 ---
 
-## 🔧 **Variabel Startup**
+## 🔧 **Konfigurasi Variabel Startup**
 
 Kelola server Anda dengan mudah melalui tab **"Startup"** di Pterodactyl Panel.
 
@@ -50,46 +46,136 @@ Kelola server Anda dengan mudah melalui tab **"Startup"** di Pterodactyl Panel.
 
 ---
 
-## 🐳 **Daftar Lengkap Docker Image**
+## 📦 **Analisis Varian Docker Image**
 
-Pilih image yang paling sesuai dengan kebutuhan aplikasi Anda dari daftar lengkap di bawah ini.
+Pilih image yang paling sesuai untuk proyek Anda. Setiap varian **mewarisi** paket dari varian sebelumnya.
+
+*(Contoh: `:graphics` sudah termasuk semua paket dari `:base`)*
+
+<br>
 
 <details>
-  <summary><strong>Klik untuk melihat semua Docker image yang tersedia</strong></summary>
+  <summary><strong>1. <code>:base</code> — Lingkungan Dasar (Esensial)</strong></summary>
+  <br>
+  <table>
+    <tr>
+      <td><strong>Deskripsi</strong></td>
+      <td>Lingkungan dasar Node.js dengan utilitas umum yang esensial.</td>
+    </tr>
+    <tr>
+      <td><strong>Ukuran</strong></td>
+      <td>~ 500 MB</td>
+    </tr>
+    <tr>
+      <td><strong>Kasus Penggunaan</strong></td>
+      <td>Aplikasi web standar, API backend, bot Discord/Telegram sederhana.</td>
+    </tr>
+    <tr>
+      <td><strong>NPM Global</strong></td>
+      <td><code>npm</code>, <code>yarn</code>, <code>pnpm</code>, <code>pm2</code></td>
+    </tr>
+    <tr>
+      <td><strong>Paket Kunci APT</strong></td>
+      <td><code>bash</code>, <code>curl</code>, <code>wget</code>, <code>git</code>, <code>unzip</code>, <code>build-essential</code>, <code>htop</code>, <code>nano</code></td>
+    </tr>
+  </table>
+</details>
 
-  | Nama Image                                                 |
-  | :--------------------------------------------------------- |
-  | `athars5443/pterodactyl-egg:node18-base`                     |
-  | `athars5443/pterodactyl-egg:node18-graphics`                 |
-  | `athars5443/pterodactyl-egg:node18-playwright`               |
-  | `athars5443/pterodactyl-egg:node18-playwright-full`          |
-  | `athars5443/pterodactyl-egg:node18-full`                     |
-  | `athars5443/pterodactyl-egg:node20-base`                     |
-  | `athars5443/pterodactyl-egg:node20-graphics`                 |
-  | `athars5443/pterodactyl-egg:node20-playwright`               |
-  | `athars5443/pterodactyl-egg:node20-playwright-full`          |
-  | `athars5443/pterodactyl-egg:node20-full`                     |
-  | `athars5443/pterodactyl-egg:node22-base`                     |
-  | `athars5443/pterodactyl-egg:node22-graphics`                 |
-  | `athars5443/pterodactyl-egg:node22-playwright`               |
-  | `athars5443/pterodactyl-egg:node22-playwright-full`          |
-  | `athars5443/pterodactyl-egg:node22-full`                     |
-  | `athars5443/pterodactyl-egg:node25-base`                     |
-  | `athars5443/pterodactyl-egg:node25-graphics`                 |
-  | `athars5443/pterodactyl-egg:node25-playwright`               |
-  | `athars5443/pterodactyl-egg:node25-playwright-full`          |
-  | `athars5443/pterodactyl-egg:node25-full`                     |
-  | `athars5443/pterodactyl-egg:nodelatest-base`                 |
-  | `athars5443/pterodactyl-egg:nodelatest-graphics`             |
-  | `athars5443/pterodactyl-egg:nodelatest-playwright`           |
-  | `athars5443/pterodactyl-egg:nodelatest-playwright-full`      |
-  | `athars5443/pterodactyl-egg:nodelatest-full`                 |
+<details>
+  <summary><strong>2. <code>:graphics</code> — Dukungan Grafis & Media</strong></summary>
+  <br>
+  <table>
+    <tr>
+      <td><strong>Deskripsi</strong></td>
+      <td>Semua dari <code>:base</code> + dukungan untuk media, rendering, dan <strong>canvas</strong>.</td>
+    </tr>
+    <tr>
+      <td><strong>Ukuran</strong></td>
+      <td>~ 650 MB</td>
+    </tr>
+    <tr>
+      <td><strong>Kasus Penggunaan</strong></td>
+      <td>Bot dengan fitur manipulasi gambar (mis: Welcomer), generator gambar, pemrosesan video <code>ffmpeg</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Paket Kunci APT</strong></td>
+      <td><code>ffmpeg</code>, <code>imagemagick</code>, <code>libnss3</code>, <code>libgtk-3-0</code>, <code>libasound2</code>, <code>fonts-liberation</code>, <code>xvfb</code></td>
+    </tr>
+  </table>
+</details>
 
+<details>
+  <summary><strong>3. <code>:playwright</code> — Automasi Browser</strong></summary>
+  <br>
+  <table>
+    <tr>
+      <td><strong>Deskripsi</strong></td>
+      <td>Semua dari <code>:graphics</code> + library lengkap untuk <strong>browser automation</strong>.</td>
+    </tr>
+    <tr>
+      <td><strong>Ukuran</strong></td>
+      <td>~ 950 MB</td>
+    </tr>
+    <tr>
+      <td><strong>Kasus Penggunaan</strong></td>
+      <td>Web scraping, auto-testing, generator screenshot, aplikasi yang butuh <code>puppeteer</code> atau <code>playwright</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Paket Kunci APT</strong></td>
+      <td><code>playwright</code>, <code>chromium</code>, <code>firefox-esr</code>, <code>webgl-mesa</code></td>
+    </tr>
+  </table>
+</details>
+
+<details>
+  <summary><strong>4. <code>:playwright-full</code> — Toolchain Build</strong></summary>
+  <br>
+  <table>
+    <tr>
+      <td><strong>Deskripsi</strong></td>
+      <td>Semua dari <code>:playwright</code> + toolchain lengkap untuk <strong>build native modules</strong> (<code>node-gyp</code>).</td>
+    </tr>
+    <tr>
+      <td><strong>Ukuran</strong></td>
+      <td>~ 1.2 GB</td>
+    </tr>
+    <tr>
+      <td><strong>Kasus Penggunaan</strong></td>
+      <td>Aplikasi yang butuh kompilasi C/C++ (mis: <code>sqlite3</code>, <code>node-sass</code>, <code>bcrypt</code>) dari source.</td>
+    </tr>
+    <tr>
+      <td><strong>Paket Kunci APT</strong></td>
+      <td><code>python3</code>, <code>make</code>, <code>gcc</code>, <code>g++</code>, <code>clang</code>, <code>node-gyp</code>, <code>cmake</code>, <code>libsqlite3-dev</code>, <code>libssl-dev</code></td>
+    </tr>
+  </table>
+</details>
+
+<details>
+  <summary><strong>5. <code>:full</code> — Lengkap (Termasuk Java)</strong></summary>
+  <br>
+  <table>
+    <tr>
+      <td><strong>Deskripsi</strong></td>
+      <td>Semua dari <code>:playwright-full</code> + <strong>Java Runtime Environment (JRE)</strong>.</td>
+    </tr>
+    <tr>
+      <td><strong>Ukuran</strong></td>
+      <td>~ 1.3 GB</td>
+    </tr>
+    <tr>
+      <td><strong>Kasus Penggunaan</strong></td>
+      <td>Aplikasi Node.js yang perlu menjalankan proses Java (mis: bot musik <code>lavalink</code>, interaksi dengan <code>.jar</code>).</td>
+    </tr>
+    <tr>
+      <td><strong>Paket Kunci APT</strong></td>
+      <td><code>openjdk-17-jre-headless</code></td>
+    </tr>
+  </table>
 </details>
 
 ---
 
-## 🚀 **Panduan Instalasi**
+## ⚙️ **Panduan Instalasi Cepat**
 
 1.  **Unduh Egg**: Ambil file `nodejs-egg.json` dari [repositori ini](https://github.com/Athar5443/pterodactyl-nodejs-egg/).
 2.  **Impor ke Panel**:
@@ -97,13 +183,13 @@ Pilih image yang paling sesuai dengan kebutuhan aplikasi Anda dari daftar lengka
     -   Navigasi ke `Admin` -> `Nests`.
     -   Klik tombol `Import Egg` dan unggah file `nodejs-egg.json`.
     -   Pilih **Nest "Node.js"** sebagai tujuan impor.
-3.  **Buat Server Baru**: Egg sudah siap! Buat server baru dan pilih **"AtharsTech Node.js"** dari daftar Egg yang tersedia.
+3.  **Buat Server Baru**: Egg siap digunakan! Saat membuat server baru, pilih **"AtharsTech Node.js"** dari daftar Egg.
 
 ---
 
-##  hosting **Butuh Server Pterodactyl?**
+## 🛒 **Butuh Server Pterodactyl?**
 
-Siap menjalankan proyek Anda tapi belum punya server? Kami menyediakan server Pterodactyl berkualitas tinggi yang sudah terkonfigurasi dan siap pakai dengan harga terjangkau.
+Siap menjalankan proyek Anda tapi belum punya server? Kami menyediakan hosting Pterodactyl berkualitas tinggi yang sudah terkonfigurasi, aman, dan siap pakai dengan harga terjangkau.
 
 -   **Performa Cepat & Stabil**
 -   **Setup Instan**
@@ -121,5 +207,5 @@ Hubungi kami untuk konsultasi dan pemesanan sekarang juga!
 
 <div align="center">
   <p>Dibuat dan dikelola oleh <b>AtharsTech</b></p>
-  <p>Untuk dukungan atau pertanyaan, silakan hubungi <a href="mailto:support@athars.tech">support@athars.tech</a>.</p>
+  <p>Untuk dukungan teknis atau pertanyaan, silakan hubungi <a href="mailto:support@athars.tech">support@athars.tech</a>.</p>
 </div>
