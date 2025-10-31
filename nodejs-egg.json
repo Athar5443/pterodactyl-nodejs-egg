@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2025-10-27T00:00:00+00:00",
+    "exported_at": "2025-10-31T00:00:00+00:00",
     "name": "AtharsTech Node.js",
     "author": "support@athars.tech",
     "description": "Pterodactyl Node.js Egg with multiple variants (base, graphics, playwright, full). Supports auto-install, auto-update, and custom startup command.",
@@ -37,16 +37,16 @@
         "Node Latest (Full Entrypoint)": "athars5443\/pterodactyl-egg:nodelatest-full"
     },
     "file_denylist": [],
-    "startup": "{{STARTUP_CMD}}",
+    "startup": "if [[ -d .git ]] && [[ \"{{AUTO_UPDATE}}\" == \"true\" ]]; then git pull; fi; if [[ \"{{AUTO_INSTALL}}\" == \"true\" ]]; then if [[ ! -d node_modules ]]; then npm install; elif [[ \"{{AUTO_UPDATE}}\" == \"true\" ]]; then npm update; fi; fi; {{STARTUP_CMD}}",
     "config": {
         "files": "{}",
-        "startup": "{\r\n    \"done\": [\r\n        \"Server is listening\",\r\n        \"Application started\"\r\n    ]\r\n}",
+        "startup": "{\n    \"done\": \"change this text 1234 to match your app\"\n}",
         "logs": "{}",
-        "stop": "^^C"
+        "stop": "^C"
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n# AtharsTech Node.js Docker Flexible Installer\r\nset -e\r\n\r\ncd \/mnt\/server\r\n\r\necho \"========================================\"\r\necho \"AtharsTech Node.js Installation\"\r\necho \"========================================\"\r\necho \"Installation complete!\"\r\necho \"Docker image already contains all dependencies.\"\r\necho \"Place your Node.js project files here.\"\r\necho \"========================================\"\r\n\r\nexit 0",
+            "script": "#!\/bin\/bash\n# AtharsTech Node.js Docker Flexible Installer\nset -e\n\ncd \/mnt\/server\n\necho \"========================================\"\necho \"AtharsTech Node.js Installation\"\necho \"========================================\"\n\nif [[ -z \"${GIT_ADDRESS}\" ]]; then\n    echo \"No Git repository provided.\"\n    echo \"Place your Node.js project files here.\"\nelse\n    echo \"Cloning from: ${GIT_ADDRESS}\"\n    if [[ -z \"${GIT_BRANCH}\" ]]; then\n        git clone ${GIT_ADDRESS} .\n    else\n        git clone --single-branch --branch ${GIT_BRANCH} ${GIT_ADDRESS} .\n    fi\n    \n    if [[ -f package.json ]]; then\n        echo \"Installing dependencies...\"\n        npm install\n    fi\nfi\n\necho \"Installation complete!\"\necho \"========================================\"\n\nexit 0",
             "container": "node:18-bullseye-slim",
             "entrypoint": "bash"
         }
@@ -69,7 +69,7 @@
             "default_value": "true",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|boolean",
+            "rules": "required|in:true,false",
             "field_type": "text"
         },
         {
@@ -79,7 +79,27 @@
             "default_value": "false",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|boolean",
+            "rules": "required|in:true,false",
+            "field_type": "text"
+        },
+        {
+            "name": "Git Repository Address",
+            "description": "Git repository URL (leave empty to skip)",
+            "env_variable": "GIT_ADDRESS",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Git Branch",
+            "description": "Git branch to clone (leave empty for default)",
+            "env_variable": "GIT_BRANCH",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
             "field_type": "text"
         }
     ]
